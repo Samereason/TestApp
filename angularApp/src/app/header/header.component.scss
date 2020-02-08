@@ -1,0 +1,22 @@
+@import "~src/assets/styles/_variables/main";
+
+.header {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+
+  .navigation-list {
+    .item {
+      margin-right: 121px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 14px;
+      &:hover {
+        color: lighten($textMain, 10%);
+      }
+    }
+    .item:last-child {
+      margin-right: 0;
+    }
+  }
+}

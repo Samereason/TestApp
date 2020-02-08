@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~src/assets/styles/_helpers/fonts";
+@import "~src/assets/styles/_variables/main";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $PlayfairDisplay;
+  color: $textMain;
+}
+
+p {
+  font-size: 14px;
+}
+
+.content-wrap {
+  margin: 0 auto;
+  padding: 0 70px;
+  max-width: 1200px;
+}

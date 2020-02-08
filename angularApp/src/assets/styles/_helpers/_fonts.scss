@@ -1,0 +1,19 @@
+$fontsDir: "/assets/fonts";
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('#{$fontsDir}/PlayfairDisplay/PlayfairDisplayRegular/PlayfairDisplay-Regular.woff2') format('woff2'),
+  url('#{$fontsDir}/PlayfairDisplay/PlayfairDisplayRegular/PlayfairDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('#{$fontsDir}/Ubuntu/UbuntuRegular/Ubuntu-Regular.woff2') format('woff2'),
+  url('#{$fontsDir}/Ubuntu/UbuntuRegular/Ubuntu-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
