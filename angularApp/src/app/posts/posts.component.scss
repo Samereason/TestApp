@@ -1,0 +1,31 @@
+@import "~src/assets/styles/_variables/main";
+
+.posts-list {
+  margin: 130px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  .item {
+    margin-bottom: 132px;
+    width: 45%;
+
+    .post-preview {
+      margin-bottom: 32px;
+    }
+
+    .category {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: $Ubuntu;
+      color: $textSecondary;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: 400;
+    }
+  }
+}
