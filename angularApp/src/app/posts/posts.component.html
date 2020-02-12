@@ -1,61 +1,13 @@
 <ul class="posts-list">
-    <li class="item">
+    <li class="item" *ngFor="let post of activePosts">
         <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
 
-        <p class="category">Lifestyle</p>
+        <p class="category">item ID : {{post.id}}</p>
 
-        <h2 class="title">More than just a music festival</h2>
+        <h2 class="title">{{post.title}}</h2>
 
-        <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur.
-        </p>
-    </li>
-
-    <li class="item">
-        <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
-
-        <p class="category">Lifestyle</p>
-
-        <h2 class="title">More than just a music festival</h2>
-
-        <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur.
-        </p>
-    </li>
-
-    <li class="item">
-        <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
-
-        <p class="category">Lifestyle</p>
-
-        <h2 class="title">More than just a music festival</h2>
-
-        <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur.
-        </p>
-    </li>
-
-    <li class="item">
-        <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
-
-        <p class="category">Lifestyle</p>
-
-        <h2 class="title">More than just a music festival</h2>
-
-        <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur.
-        </p>
+        <p class="description">{{post.body}}</p>
     </li>
 </ul>
+
+<button (click)="loadNextPosts()">Load more</button>
