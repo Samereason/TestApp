@@ -16,6 +16,13 @@ p {
   font-size: 14px;
 }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .content-wrap {
   margin: 0 auto;
   padding: 0 70px;

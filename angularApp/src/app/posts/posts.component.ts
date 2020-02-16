@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import {PostsService} from '../posts.service';
 
+type Post = {
+  userId: number,
+  id: number,
+  title: string,
+  body: string
+}[];
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
+
 export class PostsComponent implements OnInit {
-  private posts;
+  private posts: Post;
   private activePosts = [];
   private currentPost = 0;
   private postsInterval = 6;
@@ -15,9 +23,9 @@ export class PostsComponent implements OnInit {
   constructor(private _postsService: PostsService) {
   }
 
-  loadNextPosts() {
-    let lastElem = this.currentPost + this.postsInterval;
-    const firstElem = this.currentPost;
+  loadNextPosts(): void {
+    let lastElem: number = this.currentPost + this.postsInterval;
+    const firstElem: number = this.currentPost;
 
     if (this.currentPost === this.posts.length) { return }
     if (lastElem > this.posts.length) {
@@ -29,7 +37,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._postsService.getPosts().subscribe(posts => {
+    this._postsService.getPosts().subscribe((posts: Post) => {
       this.posts = posts;
       this.loadNextPosts();
     });

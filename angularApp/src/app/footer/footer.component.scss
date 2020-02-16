@@ -1,0 +1,36 @@
+.footer {
+  margin: 0 auto;
+  padding: 38px 73px 38px 150px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #000000;
+
+  .footer__rules-list {
+    .item {
+      margin-right: 12px;
+      color: #000000;
+      &:hover {
+        color: lighten(#000000, 10%);
+      }
+    }
+  }
+
+  .footer__socials-list {
+    .item {
+      margin-right: 17px;
+      &:first-child {
+        margin-left: 21px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

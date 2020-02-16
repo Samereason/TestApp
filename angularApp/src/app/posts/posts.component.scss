@@ -2,7 +2,7 @@
 
 .posts-list {
   margin: 130px 0 0 0;
-  padding: 0;
+  padding: 0 80px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -27,5 +27,21 @@
       font-size: 30px;
       font-weight: 400;
     }
+  }
+}
+
+
+.load-more {
+  margin: 0 auto 100px auto;
+  padding: 15px;
+  display: block;
+  min-width: 164px;
+  border: 1px solid #626262;
+  cursor: pointer;
+  background: none;
+  font-size: 20px;
+  color: $textMain;
+  &:hover {
+    opacity: 0.8;
   }
 }
