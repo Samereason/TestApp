@@ -7,8 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { PostsComponent } from './posts/posts.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
-import { PreviewComponent } from './preview/preview.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     HeaderComponent,
     PostsComponent,
     FooterComponent,
-    PreviewComponent,
-    MainPageComponent
+    MainPageComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
