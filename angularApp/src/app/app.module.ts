@@ -7,13 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { PostsComponent } from './posts/posts.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { PreviewComponent } from './preview/preview.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PostsComponent,
-    FooterComponent
+    FooterComponent,
+    PreviewComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
