@@ -31,4 +31,27 @@
       color: lighten($textSecondary, 10%);
     }
   }
+
+  .share {
+    margin: 69px 0 78px 0;
+    text-align: right;
+    font-family: $Ubuntu;
+    font-size: 13px;
+    color: #b4ad9e;
+
+    .social-link {
+      margin-right: 17px;
+      vertical-align: middle;
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:first-child {
+        margin-left: 23px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
