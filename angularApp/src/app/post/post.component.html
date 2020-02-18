@@ -25,4 +25,20 @@
 
         <a href="#" class="social-link"><img src="assets/img/socials/pinterest.png" alt="pint"></a>
     </div>
+
+    <div class="comments-list">
+        <p class="count">{{postComments.length}} comments</p>
+
+        <div class="item" *ngFor="let comment of postComments">
+            <img src="assets/img/post/user-ico.png" class="user-ico" alt="user-ico">
+
+            <div class="item__body">
+                <p class="name">{{comment.email}}</p>
+
+                <p class="description">{{comment.body}}</p>
+
+                <button class="reply">reply</button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -9,6 +9,7 @@ import {PostsService} from '../posts.service';
 })
 export class PostComponent implements OnInit {
   private post;
+  private postComments;
 
   constructor(private route: ActivatedRoute, private _postsService: PostsService) {}
 
@@ -16,6 +17,10 @@ export class PostComponent implements OnInit {
     this.route.params.subscribe(params => {
       this._postsService.getPost(params.id).subscribe(post => {
         this.post = post;
+      });
+
+      this._postsService.getPostComments(params.id).subscribe(comments => {
+        this.postComments = comments;
       });
     });
   }

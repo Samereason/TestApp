@@ -13,6 +13,10 @@ export class PostsService {
   }
 
   public getPost(id: string) {
-    return this._http.get('https://jsonplaceholder.typicode.com/posts/' + id)
+    return this._http.get('https://jsonplaceholder.typicode.com/posts/' + id);
+  }
+
+  public getPostComments(id: string) {
+    return this._http.get('https://jsonplaceholder.typicode.com/posts/' + id + '/comments');
   }
 }
