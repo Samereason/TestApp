@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PostsService} from '../posts.service';
-
-type Post = {
-  userId: number,
-  id: number,
-  title: string,
-  body: string
-}[];
+import {PostInterface} from "../models/PostInterface";
 
 @Component({
   selector: 'app-posts',
@@ -15,7 +9,7 @@ type Post = {
 })
 
 export class PostsComponent implements OnInit {
-  private posts: Post;
+  private posts: PostInterface[];
   private activePosts = [];
   private currentPost = 0;
   private postsInterval = 6;
@@ -37,10 +31,10 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._postsService.getPosts().subscribe((posts: Post) => {
+    this._postsService.getPosts().subscribe((posts: PostInterface[]) => {
       this.posts = posts;
       this.loadNextPosts();
-    });
+    }, error => console.error(error));
   }
 
 }
