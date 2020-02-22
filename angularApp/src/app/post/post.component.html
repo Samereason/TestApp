@@ -40,5 +40,15 @@
                 <button class="reply">reply</button>
             </div>
         </div>
+
+        <div class="item">
+            <img src="assets/img/post/user-ico.png" class="user-ico" alt="user-ico">
+
+            <div class="item__body comment-area">
+                <textarea placeholder="JOIN THE DISCUSSION" [formControl]="commentControl"></textarea>
+
+                <button class="add-comment" (click)="addComment()">comment</button>
+            </div>
+        </div>
     </div>
 </div>

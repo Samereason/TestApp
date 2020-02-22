@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {PostsService} from '../posts.service';
 import {PostInterface} from "../models/PostInterface";
 import {CommentsInterface} from "../models/CommentsInterface";
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -12,11 +13,30 @@ import {CommentsInterface} from "../models/CommentsInterface";
 export class PostComponent implements OnInit {
   private post: PostInterface;
   private postComments: CommentsInterface[];
+  commentControl: FormControl;
+  private postId: number;
 
   constructor(private route: ActivatedRoute, private _postsService: PostsService) {}
 
+  addComment() {
+    if (this.commentControl.status === "VALID"){
+      this.postComments.push({
+          'postId': this.postId,
+          'id': this.postId,
+          'name': 'bob',
+          'email': 'someEmail',
+          'body': this.commentControl.value
+        });
+      this.commentControl.setValue('');
+    } else console.log('comment min length is 1 symbol');
+  };
+
   ngOnInit(): void {
+    this.commentControl = new FormControl('', [Validators.required]);
+
     this.route.params.subscribe(params => {
+      this.postId = params.id;
+
       this._postsService.getPost(params.id).subscribe((post: PostInterface) => {
         this.post = post;
       }, error => console.error(error));

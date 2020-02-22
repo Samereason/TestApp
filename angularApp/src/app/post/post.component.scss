@@ -73,6 +73,10 @@
       display: flex;
       align-items: flex-start;
 
+      .item__body {
+        width: 100%;
+      }
+
       .user-ico {
         margin-right: 37px;
         width: 69px;
@@ -93,7 +97,7 @@
         line-height: 1.7;
       }
 
-      .reply {
+      .reply, .add-comment {
         padding: 0;
         border: none;
         background: transparent;
@@ -105,6 +109,27 @@
 
         &:hover {
           color: lighten($textSecondary, 10%);
+        }
+      }
+
+      .comment-area {
+        position: relative;
+        textarea {
+          padding: 24px 34px 10px 34px;
+          width: 100%;
+          height: 70px;
+          resize: none;
+          border-radius: 5px;
+          border: solid 1px #c8c8c8;
+          &::placeholder {
+            color: #c8c8c8;
+          }
+        }
+
+        .add-comment {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
         }
       }
     }
