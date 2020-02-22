@@ -1,54 +1,64 @@
 <div class="post">
     <img src="assets/img/main-page/preview.png" alt="preview" class="post__preview">
 
-    <p class="post__category">postID: {{post?.id}}</p>
+    <div class="post__wrap">
+        <p class="post__category">postID: {{post?.id}}</p>
 
-    <h2 class="post__title">{{post?.title}}</h2>
+        <h2 class="post__title">{{post?.title}}</h2>
 
-    <img src="assets/img/post/post-one.png" alt="post-photo" class="post__photo">
+        <img src="assets/img/post/post-one.png" alt="post-photo" class="post__photo">
 
-    <img src="assets/img/post/post-two.png" alt="post-photo" class="post__photo">
+        <img src="assets/img/post/post-two.png" alt="post-photo" class="post__photo">
 
-    <p class="post__description">{{post?.body}}</p>
+        <p class="post__description">{{post?.body}}</p>
 
 
-    <div class="share">
-        SHARE
+        <div class="share social-block">
+            SHARE
 
-        <a href="#" class="social-link"><img src="assets/img/socials/facebook.png" alt="fb"></a>
+            <a href="#" class="social-link"><img src="assets/img/socials/facebook.png" alt="fb"></a>
 
-        <a href="#" class="social-link"><img src="assets/img/socials/twitter.png" alt="tw"></a>
+            <a href="#" class="social-link"><img src="assets/img/socials/twitter.png" alt="tw"></a>
 
-        <a href="#" class="social-link"><img src="assets/img/socials/g+.png" alt="g+"></a>
+            <a href="#" class="social-link"><img src="assets/img/socials/g+.png" alt="g+"></a>
 
-        <a href="#" class="social-link"><img src="assets/img/socials/tumblr.png" alt="tmb"></a>
+            <a href="#" class="social-link"><img src="assets/img/socials/tumblr.png" alt="tmb"></a>
 
-        <a href="#" class="social-link"><img src="assets/img/socials/pinterest.png" alt="pint"></a>
-    </div>
+            <a href="#" class="social-link"><img src="assets/img/socials/pinterest.png" alt="pint"></a>
+        </div>
 
-    <div class="comments-list">
-        <p class="count">{{postComments?.length}} comments</p>
+        <div class="comments-list">
+            <p class="count">{{postComments?.length}} comments</p>
 
-        <div class="item" *ngFor="let comment of postComments">
-            <img src="assets/img/post/user-ico.png" class="user-ico" alt="user-ico">
+            <div class="item" *ngFor="let comment of postComments">
+                <img src="assets/img/post/user-ico.png" class="user-ico" alt="user-ico">
 
-            <div class="item__body">
-                <p class="name">{{comment.email}}</p>
+                <div class="item__body">
+                    <p class="name">{{comment.email}}</p>
 
-                <p class="description">{{comment.body}}</p>
+                    <p class="description">{{comment.body}}</p>
 
-                <button class="reply">reply</button>
+                    <button class="reply">reply</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="assets/img/post/user-ico.png" class="user-ico" alt="user-ico">
+
+                <div class="item__body comment-area">
+                    <textarea placeholder="JOIN THE DISCUSSION" [formControl]="commentControl"></textarea>
+
+                    <button class="add-comment" (click)="addComment()">comment</button>
+                </div>
             </div>
         </div>
 
-        <div class="item">
-            <img src="assets/img/post/user-ico.png" class="user-ico" alt="user-ico">
+        <div class="social-block">
+            CONNECTED WITH
 
-            <div class="item__body comment-area">
-                <textarea placeholder="JOIN THE DISCUSSION" [formControl]="commentControl"></textarea>
+            <a href="#" class="social-link"><img src="assets/img/socials/twitter.png" alt="tw"></a>
 
-                <button class="add-comment" (click)="addComment()">comment</button>
-            </div>
+            <a href="#" class="social-link"><img src="assets/img/socials/facebook.png" alt="fb"></a>
         </div>
     </div>
 </div>

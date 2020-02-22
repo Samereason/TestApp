@@ -7,6 +7,11 @@
     margin-bottom: 90px;
   }
 
+  .post__wrap {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
   .post__category, .leave-comment {
     text-transform: uppercase;
     font-size: 14px;
@@ -18,6 +23,13 @@
   .post__title {
     font-size: 30px;
     font-weight: 300;
+  }
+
+  .post__description {
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
   }
 
   .post__photo {
@@ -32,8 +44,7 @@
     }
   }
 
-  .share {
-    margin: 69px 0 78px 0;
+  .social-block {
     text-align: right;
     font-family: $Ubuntu;
     font-size: 13px;
@@ -55,7 +66,12 @@
     }
   }
 
+  .share {
+    margin-top: 69px;
+  }
+
   .comments-list {
+    margin-bottom: 32px;
     padding-top: 67px;
     display: flex;
     flex-direction: column;
@@ -121,6 +137,8 @@
           resize: none;
           border-radius: 5px;
           border: solid 1px #c8c8c8;
+          font-family: $Ubuntu;
+          font-weight: 300;
           &::placeholder {
             color: #c8c8c8;
           }
