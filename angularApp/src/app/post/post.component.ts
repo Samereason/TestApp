@@ -12,6 +12,7 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class PostComponent implements OnInit {
   private post: PostInterface;
+  private relatedPosts: PostInterface[];
   private postComments: CommentsInterface[];
   commentControl: FormControl;
   private postId: number;
@@ -39,6 +40,10 @@ export class PostComponent implements OnInit {
 
       this._postsService.getPost(params.id).subscribe((post: PostInterface) => {
         this.post = post;
+
+        this._postsService.getRelatedPosts(post.userId).subscribe((relatedPosts: PostInterface[]) => {
+          this.relatedPosts = relatedPosts.slice(0, 3);
+        }, error => console.error(error));
       }, error => console.error(error));
 
       this._postsService.getPostComments(params.id).subscribe((comments: CommentsInterface[]) => {
@@ -46,5 +51,4 @@ export class PostComponent implements OnInit {
       }, error => console.error(error));
     });
   }
-
 }

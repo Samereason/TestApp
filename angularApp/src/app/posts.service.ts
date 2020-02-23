@@ -12,6 +12,10 @@ export class PostsService {
     return this._http.get('https://jsonplaceholder.typicode.com/posts');
   }
 
+  public getRelatedPosts(userId: number) {
+    return this._http.get('https://jsonplaceholder.typicode.com/posts?userId=' + userId)
+  }
+
   public getPost(id: string) {
     return this._http.get('https://jsonplaceholder.typicode.com/posts/' + id);
   }

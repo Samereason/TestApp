@@ -26,7 +26,26 @@
 
             <a href="#" class="social-link"><img src="assets/img/socials/pinterest.png" alt="pint"></a>
         </div>
+    </div>
 
+
+    <div class="related-posts">
+        <div class="post__wrap">
+            <p class="caption">you may also like</p>
+
+            <ul class="list">
+                <li class="item" *ngFor="let item of relatedPosts">
+                    <a href="/post/{{item.id}}">
+                        <img src="/assets/img/main-page/post-preview.png" alt="preview" class="item__preview">
+
+                        <p class="item__title">{{item.title}}</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="post__wrap">
         <div class="comments-list">
             <p class="count">{{postComments?.length}} comments</p>
 
