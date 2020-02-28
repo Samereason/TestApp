@@ -16,6 +16,7 @@ export class PostComponent implements OnInit {
   private postComments: CommentsInterface[];
   commentControl: FormControl;
   private postId: number;
+  private postLoading: boolean = true;
 
   constructor(private route: ActivatedRoute, private _postsService: PostsService) {}
 
@@ -40,11 +41,15 @@ export class PostComponent implements OnInit {
 
       this._postsService.getPost(params.id).subscribe((post: PostInterface) => {
         this.post = post;
+        this.postLoading = false;
 
         this._postsService.getRelatedPosts(post.userId).subscribe((relatedPosts: PostInterface[]) => {
           this.relatedPosts = relatedPosts.slice(0, 3);
         }, error => console.error(error));
-      }, error => console.error(error));
+      }, error => {
+        this.postLoading = false;
+        console.error(error);
+      });
 
       this._postsService.getPostComments(params.id).subscribe((comments: CommentsInterface[]) => {
         this.postComments = comments;
