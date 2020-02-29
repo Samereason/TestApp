@@ -1,15 +1,23 @@
-<ul class="posts-list">
-    <li class="item" *ngFor="let post of activePosts">
-        <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
+<div class="posts-list-wrap">
+    <ul class="posts-list">
+        <li class="item" *ngFor="let post of activePosts">
+            <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
 
-        <p class="category">item ID : {{post.id}}</p>
+            <p class="category">item ID : {{post.id}}</p>
 
-        <h2 class="title">{{post.title}}</h2>
+            <h2 class="title">{{post.title}}</h2>
 
-        <p class="description">{{post.body}}</p>
+            <p class="description">{{post.body}}</p>
 
-        <a href="/post/{{post.id}}">read-more</a>
-    </li>
-</ul>
+            <a href="/post/{{post.id}}">read-more</a>
+        </li>
+    </ul>
+
+    <div class="loaderSpinner" *ngIf="postsLoading">
+        <mat-spinner class="spinner"></mat-spinner>
+    </div>
+</div>
+
+
 
 <button (click)="loadNextPosts()" class="load-more">Load more</button>

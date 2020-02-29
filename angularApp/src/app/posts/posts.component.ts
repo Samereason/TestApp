@@ -13,6 +13,7 @@ export class PostsComponent implements OnInit {
   private activePosts = [];
   private currentPost = 0;
   private postsInterval = 6;
+  private postsLoading: boolean = true;
 
   constructor(private _postsService: PostsService) {
   }
@@ -34,7 +35,11 @@ export class PostsComponent implements OnInit {
     this._postsService.getPosts().subscribe((posts: PostInterface[]) => {
       this.posts = posts;
       this.loadNextPosts();
-    }, error => console.error(error));
+      this.postsLoading = false;
+    }, error => {
+      this.postsLoading = false;
+      console.error(error);
+    });
   }
 
 }
