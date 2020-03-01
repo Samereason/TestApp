@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostsService} from '../posts.service';
 import {PostInterface} from "../models/PostInterface";
+import previews from "../../assets/previews.json"
 
 @Component({
   selector: 'app-posts',
@@ -33,7 +34,12 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this._postsService.getPosts().subscribe((posts: PostInterface[]) => {
+      posts.forEach((item, index) => {
+        (previews[index]) ? item.preview = previews[index] : item.preview =  previews[0]
+      });
+
       this.posts = posts;
+
       this.loadNextPosts();
       this.postsLoading = false;
     }, error => {

@@ -1,7 +1,7 @@
 <div class="posts-list-wrap">
     <ul class="posts-list">
         <li class="item" *ngFor="let post of activePosts">
-            <img src="/assets/img/main-page/post-preview.png" alt="preview" class="post-preview">
+            <img src="{{post.preview}}" width="420" height="280" alt="preview" class="post-preview">
 
             <p class="category">item ID : {{post.id}}</p>
 
