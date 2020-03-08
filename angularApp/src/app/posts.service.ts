@@ -20,7 +20,7 @@ export class PostsService {
     return this._http.get('https://jsonplaceholder.typicode.com/posts/' + id);
   }
 
-  public getPostComments(id: string) {
+  public getPostComments(id: number) {
     return this._http.get('https://jsonplaceholder.typicode.com/posts/' + id + '/comments');
   }
 }

@@ -16,7 +16,6 @@ export class PostComponent implements OnInit {
   private postComments: CommentsInterface[];
   commentControl: FormControl;
   private postId: number;
-  private postLoading: boolean = true;
   private postCommentsLoading: boolean = true;
   private relatedPostsLoading: boolean = true;
 
@@ -38,26 +37,19 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     this.commentControl = new FormControl('', [Validators.required]);
 
-    this.route.params.subscribe(params => {
-      this.postId = params.id;
+    this.route.data.subscribe(data => {
+      this.post = data.post;
+      this.postId = this.post.id;
 
-      this._postsService.getPost(params.id).subscribe((post: PostInterface) => {
-        this.post = post;
-        this.postLoading = false;
-
-        this._postsService.getRelatedPosts(post.userId).subscribe((relatedPosts: PostInterface[]) => {
-          this.relatedPosts = relatedPosts.slice(0, 3);
-          this.relatedPostsLoading = false;
-        }, error => {
-          this.relatedPostsLoading = false;
-          console.error(error);
-        });
+      this._postsService.getRelatedPosts(this.post.userId).subscribe((relatedPosts: PostInterface[]) => {
+        this.relatedPosts = relatedPosts.slice(0, 3);
+        this.relatedPostsLoading = false;
       }, error => {
-        this.postLoading = false;
+        this.relatedPostsLoading = false;
         console.error(error);
       });
 
-      this._postsService.getPostComments(params.id).subscribe((comments: CommentsInterface[]) => {
+      this._postsService.getPostComments(this.post.id).subscribe((comments: CommentsInterface[]) => {
         this.postComments = comments;
         this.postCommentsLoading = false;
       }, error => {
