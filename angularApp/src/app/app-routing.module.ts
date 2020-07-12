@@ -13,7 +13,8 @@ const routes: Routes = [
       post: PostResolveService
     },
     component: PostComponent
-  }
+  },
+  { path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
